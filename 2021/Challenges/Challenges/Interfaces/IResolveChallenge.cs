@@ -8,7 +8,7 @@ namespace Challenges.Interfaces {
 
 	internal interface IResolveChallenge {
 
-		public static string? Resolve() {
+		public static string Resolve() {
 			throw new NotImplementedException("Challenge no solved");
 		}
 	}
