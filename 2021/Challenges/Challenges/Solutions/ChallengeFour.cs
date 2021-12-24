@@ -22,40 +22,29 @@ namespace Challenges.Solutions {
 
 			bingo.ForEach(table => bingos.Add(new Bingo(table)));
 
-			string result = "Part One: " + ResolvePartOne(numbers, bingos) + "\n";
-			result += "\t\t    Part Two: " + ResolvePartTwo(numbers, bingos);
+			List<(Bingo bingo, int lastNumber)> finished = ResolveAll(numbers, bingos);
+
+			string result = "Part One: " + ResolvePartOne(finished) + "\n";
+			result += "\t\t    Part Two: " + ResolvePartTwo(finished);
 			return result;
 		}
 
-		public static string ResolvePartOne(int[] numbers, List<Bingo> bingos) {
-			foreach (var output in numbers) {
-				foreach (var bingo in bingos) {
-					bingo.MarkAllMatchs(output);
-					if (bingo.IsBingoSolved()) {
-						int sumUnMarked = bingo.GetSumUnMarked();
-						return (sumUnMarked * output).ToString();
-					}
-				}
-			}
+		public static string ResolvePartOne(List<(Bingo bingo, int lastNumber)> finished) => (finished[0].bingo.GetSumUnMarked() * finished[0].lastNumber).ToString();
 
-			return 0.ToString();
-		}
+		public static string ResolvePartTwo(List<(Bingo bingo, int lastNumber)> finished) => (finished[^1].bingo.GetSumUnMarked() * finished[^1].lastNumber).ToString();
 
-		public static string ResolvePartTwo(int[] numbers, List<Bingo> bingos) {
-			List<(Bingo, int)> finished = new();
+		private static List<(Bingo bingo, int lastNumber)> ResolveAll(int[] numbers, List<Bingo> bingos) {
+			List<(Bingo bingo, int lastNumber)> finished = new();
 			foreach (var number in numbers) {
 				foreach (var bingo in bingos) {
-					if (!bingo.Complete) {
-						bingo.MarkAllMatchs(number);
-						if (!bingo.Complete && bingo.IsBingoSolved()) {
-							bingo.Complete = true;
-							finished.Add((bingo, number));
-						}
+					bingo.MarkAllMatchs(number);
+					if (!bingo.Complete && bingo.IsBingoSolved()) {
+						bingo.Complete = true;
+						finished.Add((bingo, number));
 					}
 				}
 			}
-
-			return (finished[^1].Item1.GetSumUnMarked() * finished[^1].Item2).ToString();
+			return finished;
 		}
 
 		#region Representation
@@ -78,10 +67,12 @@ namespace Challenges.Solutions {
 
 			public void MarkAllMatchs(int number) {
 				if (!Complete) {
-					for (int i = 0; i < Numbers.GetUpperBound(0); i++) {
-						for (int j = 0; j < Numbers.GetUpperBound(1); j++) {
-							if (Numbers[i, j].Number == number) {
-								Numbers[i, j].Marked = true;
+					int rows = Numbers.GetUpperBound(0);
+					int columns = Numbers.GetUpperBound(1);
+					for (int row = 0; row <= rows; row++) {
+						for (int column = 0; column <= columns; column++) {
+							if (Numbers[row, column].Number == number) {
+								Numbers[row, column].Marked = true;
 							}
 						}
 					}
@@ -89,47 +80,38 @@ namespace Challenges.Solutions {
 			}
 
 			public bool IsBingoSolved() {
-				bool bingoFound = false;
-				for (int a = 0; a <= 4; a++) {
-					int marked = 0;
-					for (int b = 0; b <= 4; b++) {
-						if (Numbers[a, b].Marked) {
-							marked++;
+				int rows = Numbers.GetUpperBound(0);
+				int columns = Numbers.GetUpperBound(1);
+
+				for (int row = 0; row <= rows; row++) {
+					int marketRowCount = 0;
+					int marketColumnCount = 0;
+					for (int column = 0; column <= columns; column++) {
+						bool IsRowComplete = IsBingo(row, column, ref marketRowCount, rows);
+						bool IsColumnComplete = IsBingo(column, row, ref marketColumnCount, columns);
+
+						if (IsRowComplete || IsColumnComplete) {
+							return true;
 						}
 					}
-					if (marked == 5) {
-						bingoFound = true;
-						break;
-					}
 				}
+				return false;
+			}
 
-				if (bingoFound) {
-					return bingoFound;
-				}
-
-				// check columns
-				for (int a = 0; a <= 4; a++) {
-					int marked = 0;
-					for (int b = 0; b <= 4; b++) {
-						if (Numbers[b, a].Marked) {
-							marked++;
-						}
-					}
-					if (marked == 5) {
-						bingoFound = true;
-						break;
+			private bool IsBingo(int a, int b, ref int markedCount, int lenght) {
+				if (Numbers[a, b].Marked) {
+					markedCount++;
+					if (markedCount == lenght + 1) {
+						return true;
 					}
 				}
-				if (bingoFound) {
-					return bingoFound;
-				}
-				return bingoFound;
+				return false;
 			}
 
 			public int GetSumUnMarked() {
 				int sumUnMarked = 0;
-				for (int i = 0; i < Numbers.GetUpperBound(0); i++) {
-					for (int j = 0; j < Numbers.GetUpperBound(1); j++) {
+				for (int i = 0; i <= Numbers.GetUpperBound(0); i++) {
+					for (int j = 0; j <= Numbers.GetUpperBound(1); j++) {
 						if (!Numbers[i, j].Marked) {
 							sumUnMarked += Numbers[i, j].Number;
 						}
