@@ -98,16 +98,6 @@ namespace Challenges.Solutions {
 				return false;
 			}
 
-			private bool IsBingo(int a, int b, ref int markedCount, int lenght) {
-				if (Numbers[a, b].Marked) {
-					markedCount++;
-					if (markedCount == lenght + 1) {
-						return true;
-					}
-				}
-				return false;
-			}
-
 			public int GetSumUnMarked() {
 				int sumUnMarked = 0;
 				for (int i = 0; i <= Numbers.GetUpperBound(0); i++) {
@@ -118,6 +108,16 @@ namespace Challenges.Solutions {
 					}
 				}
 				return sumUnMarked;
+			}
+
+			private bool IsBingo(int a, int b, ref int markedCount, int lenght) {
+				if (Numbers[a, b].Marked) {
+					markedCount++;
+					if (markedCount == lenght + 1) {
+						return true;
+					}
+				}
+				return false;
 			}
 		}
 
