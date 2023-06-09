@@ -4,7 +4,7 @@ using AOC.Helpers;
 using AOC.Interfaces;
 
 namespace AOC.Year._2022.Problems.Problem07 {
-	public class ProblemSix : IPuzzle, IReadTest<object> {
+	public class ProblemSeven : IPuzzle, IReadTest<object> {
 		public int Year { get; set; }
 		public int Puzzle { get; set; }
 
