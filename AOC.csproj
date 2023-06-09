@@ -83,7 +83,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Year\2022\Problems\Problem08\" />
     <Folder Include="Year\2022\Problems\Problem09\" />
     <Folder Include="Year\2022\Problems\Problem10\" />
     <Folder Include="Year\2022\Problems\Problem11\" />
