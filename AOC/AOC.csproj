@@ -1,0 +1,101 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Year\2022\Problems\1-One\**" />
+    <Compile Remove="Year\2022\Problems\10-Ten\**" />
+    <Compile Remove="Year\2022\Problems\2-Two\**" />
+    <Compile Remove="Year\2022\Problems\3-Three\**" />
+    <Compile Remove="Year\2022\Problems\4-Four\**" />
+    <Compile Remove="Year\2022\Problems\5-Five\**" />
+    <Compile Remove="Year\2022\Problems\6-Six\**" />
+    <Compile Remove="Year\2022\Problems\7-Seven\**" />
+    <Compile Remove="Year\2022\Problems\8-Eight\**" />
+    <Compile Remove="Year\2022\Problems\9-Nine\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %283%29 - Copy %282%29\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %283%29 - Copy - Copy\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %284%29 - Copy %282%29\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %284%29 - Copy - Copy\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %285%29 - Copy %282%29\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %285%29 - Copy - Copy\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %286%29 - Copy %282%29\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %286%29 - Copy - Copy\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %287%29 - Copy %282%29\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %287%29 - Copy - Copy\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %288%29 - Copy %282%29\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %288%29 - Copy - Copy\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %289%29 - Copy - Copy\**" />
+    <Compile Remove="Year\2022\Problems\NewFolder - Copy %289%29\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\1-One\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\10-Ten\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\2-Two\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\3-Three\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\4-Four\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\5-Five\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\6-Six\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\7-Seven\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\8-Eight\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\9-Nine\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %283%29 - Copy %282%29\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %283%29 - Copy - Copy\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %284%29 - Copy %282%29\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %284%29 - Copy - Copy\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %285%29 - Copy %282%29\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %285%29 - Copy - Copy\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %286%29 - Copy %282%29\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %286%29 - Copy - Copy\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %287%29 - Copy %282%29\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %287%29 - Copy - Copy\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %288%29 - Copy %282%29\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %288%29 - Copy - Copy\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %289%29 - Copy - Copy\**" />
+    <EmbeddedResource Remove="Year\2022\Problems\NewFolder - Copy %289%29\**" />
+    <None Remove="Year\2022\Problems\1-One\**" />
+    <None Remove="Year\2022\Problems\10-Ten\**" />
+    <None Remove="Year\2022\Problems\2-Two\**" />
+    <None Remove="Year\2022\Problems\3-Three\**" />
+    <None Remove="Year\2022\Problems\4-Four\**" />
+    <None Remove="Year\2022\Problems\5-Five\**" />
+    <None Remove="Year\2022\Problems\6-Six\**" />
+    <None Remove="Year\2022\Problems\7-Seven\**" />
+    <None Remove="Year\2022\Problems\8-Eight\**" />
+    <None Remove="Year\2022\Problems\9-Nine\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %283%29 - Copy %282%29\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %283%29 - Copy - Copy\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %284%29 - Copy %282%29\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %284%29 - Copy - Copy\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %285%29 - Copy %282%29\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %285%29 - Copy - Copy\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %286%29 - Copy %282%29\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %286%29 - Copy - Copy\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %287%29 - Copy %282%29\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %287%29 - Copy - Copy\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %288%29 - Copy %282%29\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %288%29 - Copy - Copy\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %289%29 - Copy - Copy\**" />
+    <None Remove="Year\2022\Problems\NewFolder - Copy %289%29\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Year\2022\Problems\Problem08\" />
+    <Folder Include="Year\2022\Problems\Problem09\" />
+    <Folder Include="Year\2022\Problems\Problem10\" />
+    <Folder Include="Year\2022\Problems\Problem11\" />
+    <Folder Include="Year\2022\Problems\Problem12\" />
+    <Folder Include="Year\2022\Problems\Problem13\" />
+    <Folder Include="Year\2022\Problems\Problem14\" />
+    <Folder Include="Year\2022\Problems\Problem15\" />
+    <Folder Include="Year\2022\Problems\Problem16\" />
+    <Folder Include="Year\2022\Problems\Problem17\" />
+    <Folder Include="Year\2022\Problems\Problem18\" />
+    <Folder Include="Year\2022\Problems\Problem19\" />
+    <Folder Include="Year\2022\Problems\Problem20\" />
+  </ItemGroup>
+
+</Project>
