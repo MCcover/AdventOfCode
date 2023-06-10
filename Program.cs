@@ -2,8 +2,8 @@
 
 class Program {
 	static void Main(string[] args) {
-		bool exit = false;
 
+		bool exit = false;
 		do {
 			var baseColor = Console.ForegroundColor;
 
