@@ -67,7 +67,7 @@ namespace AOC.Helpers {
 
 			var number = (puzzleInput <= 9 ? "0" : "") + puzzleInput;
 
-			puzzles = puzzles.Where(x => x.FullName.Contains(yearInput.ToString()) && x.FullName.Contains(number)).ToList();
+			puzzles = puzzles.Where(x => x.FullName.Contains(yearInput.ToString()) && x.FullName.Contains(number + ".")).ToList();
 
 			if (puzzles.Count == 1) {
 				puzzle = puzzles[0];

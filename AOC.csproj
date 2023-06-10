@@ -82,19 +82,4 @@
     <None Remove="Year\2022\Problems\NewFolder - Copy %289%29\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Year\2022\Problems\Problem09\" />
-    <Folder Include="Year\2022\Problems\Problem10\" />
-    <Folder Include="Year\2022\Problems\Problem11\" />
-    <Folder Include="Year\2022\Problems\Problem12\" />
-    <Folder Include="Year\2022\Problems\Problem13\" />
-    <Folder Include="Year\2022\Problems\Problem14\" />
-    <Folder Include="Year\2022\Problems\Problem15\" />
-    <Folder Include="Year\2022\Problems\Problem16\" />
-    <Folder Include="Year\2022\Problems\Problem17\" />
-    <Folder Include="Year\2022\Problems\Problem18\" />
-    <Folder Include="Year\2022\Problems\Problem19\" />
-    <Folder Include="Year\2022\Problems\Problem20\" />
-  </ItemGroup>
-
 </Project>
