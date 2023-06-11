@@ -48,7 +48,7 @@ namespace AOC.Year._2022.Problems.Problem01 {
 			var list = new List<List<int>>();
 			var listTwo = new List<int>();
 
-			var lines = FileHelper.GetFileText(Year, Puzzle);
+			var lines = FileHelper.GetFileAllLines(Year, Puzzle);
 
 			var count = 1;
 			foreach (var line in lines) {

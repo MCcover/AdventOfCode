@@ -125,7 +125,7 @@ namespace AOC.Year._2022.Problems.Problem02 {
 		}
 
 		public string[] ReadTests() {
-			return FileHelper.GetFileText(Year, Puzzle);
+			return FileHelper.GetFileAllLines(Year, Puzzle);
 		}
 	}
 }
