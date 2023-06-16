@@ -1,13 +1,11 @@
 ﻿
 
+using AOC.Classes;
 using AOC.Helpers;
 using AOC.Interfaces;
 
 namespace AOC.Year._2022.Problems.Problem02 {
-	public class ProblemTwo : IPuzzle, IReadTest<string[]> {
-		public int Year { get; set; }
-		public int Puzzle { get; set; }
-
+	public class ProblemTwo : PuzzleBase, IReadTest<string[]> {
 		enum RPS {
 			Rock,
 			Paper,
@@ -72,7 +70,7 @@ namespace AOC.Year._2022.Problems.Problem02 {
 			},
 		};
 
-		public string SolvePartOne() {
+		public override string SolvePartOne() {
 			var points = 0;
 
 			var lines = ReadTests();
@@ -99,7 +97,7 @@ namespace AOC.Year._2022.Problems.Problem02 {
 			return points.ToString();
 		}
 
-		public string SolvePartTwo() {
+		public override string SolvePartTwo() {
 			var points = 0;
 
 			var lines = ReadTests();
@@ -117,11 +115,6 @@ namespace AOC.Year._2022.Problems.Problem02 {
 			}
 
 			return points.ToString();
-		}
-
-		public void Solve() {
-			Console.WriteLine("Part One: " + SolvePartOne());
-			Console.WriteLine("Part Two: " + SolvePartTwo());
 		}
 
 		public string[] ReadTests() {

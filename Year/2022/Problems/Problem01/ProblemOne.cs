@@ -1,14 +1,12 @@
 ﻿
 
+using AOC.Classes;
 using AOC.Helpers;
 using AOC.Interfaces;
 
 namespace AOC.Year._2022.Problems.Problem01 {
-	public class ProblemOne : IPuzzle, IReadTest<List<List<int>>> {
-		public int Year { get; set; }
-		public int Puzzle { get; set; }
-
-		public string SolvePartOne() {
+	public class ProblemOne : PuzzleBase, IReadTest<List<List<int>>> {
+		public override string SolvePartOne() {
 			var data = ReadTests();
 
 			var higher = 0;
@@ -24,7 +22,7 @@ namespace AOC.Year._2022.Problems.Problem01 {
 			return higher.ToString();
 		}
 
-		public string SolvePartTwo() {
+		public override string SolvePartTwo() {
 			var data = ReadTests();
 
 			var sums = new List<int>();
@@ -39,10 +37,6 @@ namespace AOC.Year._2022.Problems.Problem01 {
 			return sum.ToString();
 		}
 
-		public void Solve() {
-			Console.WriteLine("Part One: " + SolvePartOne());
-			Console.WriteLine("Part Two: " + SolvePartTwo());
-		}
 
 		public List<List<int>> ReadTests() {
 			var list = new List<List<int>>();

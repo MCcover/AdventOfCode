@@ -1,24 +1,23 @@
 ﻿
 
+using AOC.Classes;
 using AOC.Helpers;
 using AOC.Interfaces;
 
 namespace AOC.Year._2022.Problems.Problem06 {
-	public class ProblemSix : IPuzzle, IReadTest<string> {
-		public int Year { get; set; }
-		public int Puzzle { get; set; }
+	public class ProblemSix : PuzzleBase, IReadTest<string> {
 
 		private const int SIZE_CHUNK_PACKAGE = 4;
 		private const int SIZE_CHUNK_MESSAGE = 14;
 
-		public string SolvePartOne() {
+		public override string SolvePartOne() {
 			var text = ReadTests();
 
 			return FindPosition(text, SIZE_CHUNK_PACKAGE);
 		}
 
 
-		public string SolvePartTwo() {
+		public override string SolvePartTwo() {
 			var text = ReadTests();
 
 			return FindPosition(text, SIZE_CHUNK_MESSAGE);
@@ -45,11 +44,6 @@ namespace AOC.Year._2022.Problems.Problem06 {
 			}
 
 			return pos.ToString();
-		}
-
-		public void Solve() {
-			Console.WriteLine("Part One: " + SolvePartOne());
-			Console.WriteLine("Part Two: " + SolvePartTwo());
 		}
 
 		public string ReadTests() {

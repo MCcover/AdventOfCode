@@ -1,29 +1,23 @@
-﻿using AOC.Helpers;
+﻿using AOC.Classes;
+using AOC.Helpers;
 using AOC.Interfaces;
 using System.Text.RegularExpressions;
 
 namespace AOC.Year._2022.Problems.Problem07 {
 
-	public class ProblemSeven : IPuzzle, IReadTest<List<int>> {
-		public int Year { get; set; }
-		public int Puzzle { get; set; }
+	public class ProblemSeven : PuzzleBase, IReadTest<List<int>> {
 
-		public string SolvePartOne() {
+		public override string SolvePartOne() {
 			return ReadTests().Where(size => size < 100000)
 							  .Sum()
 							  .ToString();
 		}
 
-		public string SolvePartTwo() {
+		public override string SolvePartTwo() {
 			var sizes = ReadTests();
 			return sizes.Where(size => size + (70000000 - sizes.Max()) >= 30000000)
 						.Min()
 						.ToString();
-		}
-
-		public void Solve() {
-			Console.WriteLine("Part One: " + SolvePartOne());
-			Console.WriteLine("Part Two: " + SolvePartTwo());
 		}
 
 		public List<int> ReadTests() {

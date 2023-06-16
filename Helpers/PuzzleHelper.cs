@@ -1,29 +1,23 @@
-﻿using AOC.Interfaces;
+﻿using AOC.Classes;
+using AOC.Interfaces;
 using System.Diagnostics;
 
 namespace AOC.Helpers {
 	public static class PuzzleHelper {
 
-		public static TimeSpan ExecutePuzzle(int yearInput, int puzzleInput) {
+		public static void ExecutePuzzle(int yearInput, int puzzleInput) {
 			var puzzle = SelectProblem(yearInput, puzzleInput) ?? throw new Exception("Puzzle Not Found");
 
 			Console.WriteLine($"Results of the problem {puzzleInput} of the year {yearInput}");
 
-			Stopwatch sw = new();
-			sw.Start();
-
 			puzzle.Solve();
-
-			sw.Stop();
-
-			return TimeSpan.FromTicks(sw.ElapsedTicks);
 		}
 
-		private static IPuzzle? SelectProblem(int yearInput, int puzzleInput) {
+		private static PuzzleBase? SelectProblem(int yearInput, int puzzleInput) {
 
 			var puzzle = GetPuzzle(yearInput, puzzleInput) ?? throw new Exception("Puzzle Not Found");
 
-			var puzzleInstance = (IPuzzle?)Activator.CreateInstance(puzzle) ?? throw new Exception("Puzzle Not Found");
+			var puzzleInstance = (PuzzleBase?)Activator.CreateInstance(puzzle) ?? throw new Exception("Puzzle Not Found");
 			puzzleInstance.Year = yearInput;
 			puzzleInstance.Puzzle = puzzleInput;
 
@@ -82,10 +76,10 @@ namespace AOC.Helpers {
 			List<Type> puzzles = new();
 			Type[] types = typeof(Program).Assembly.GetTypes();
 
-			types = types.Where(x => x.FullName.Contains("AOC") && !x.FullName.Contains("IPuzzle")).ToArray();
+			types = types.Where(x => x.FullName.Contains("AOC") && !x.FullName.Contains("PuzzleBase")).ToArray();
 
 			foreach (Type type in types) {
-				if (!type.IsNestedPrivate && typeof(IPuzzle).IsAssignableFrom(type)) {
+				if (!type.IsNestedPrivate && typeof(PuzzleBase).IsAssignableFrom(type)) {
 					puzzles.Add(type);
 				}
 			}

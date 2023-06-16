@@ -1,12 +1,11 @@
-﻿using AOC.Helpers;
+﻿using AOC.Classes;
+using AOC.Helpers;
 using AOC.Interfaces;
 
 namespace AOC.Year._2022.Problems.Problem05 {
-	public class ProblemFive : IPuzzle, IReadTest<Data> {
-		public int Year { get; set; }
-		public int Puzzle { get; set; }
+	public class ProblemFive : PuzzleBase, IReadTest<Data> {
 
-		public string SolvePartOne() {
+		public override string SolvePartOne() {
 			var result = "";
 
 			var data = ReadTests();
@@ -28,7 +27,7 @@ namespace AOC.Year._2022.Problems.Problem05 {
 			return result;
 		}
 
-		public string SolvePartTwo() {
+		public override string SolvePartTwo() {
 			var result = "";
 
 			var data = ReadTests();
@@ -45,11 +44,6 @@ namespace AOC.Year._2022.Problems.Problem05 {
 			}
 
 			return result;
-		}
-
-		public void Solve() {
-			Console.WriteLine("Part One: " + SolvePartOne());
-			Console.WriteLine("Part Two: " + SolvePartTwo());
 		}
 
 		public Data ReadTests() {
