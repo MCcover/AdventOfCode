@@ -20,7 +20,7 @@ class Program {
 			Console.WriteLine();
 			Console.WriteLine("Back to the Principal Menu?");
 
-			MenuHelper.SetVariables(2, 5, 10);
+			MenuHelper.SetVariables(2, 5, 11);
 			exit = MenuHelper.MultipleChoice(false, "YES", "NO") == 1;
 
 			MenuHelper.ResetVariables();
